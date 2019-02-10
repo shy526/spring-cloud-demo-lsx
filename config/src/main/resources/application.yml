@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: config-01
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sunjiaqing/spring-cloud-demo-config.git
+          username: sundada214@outlook.com
+          password: Sunjiaqing214..
+          basedir: D:\project\spring-cloud-demo\gitbase
+  rabbitmq:
+    addresses: 192.168.239.129
+    port: 5672
+management:
+  endpoints:
+    web:
+      exposure:
+        # 开放所所有端口
+        include: '*'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 9999

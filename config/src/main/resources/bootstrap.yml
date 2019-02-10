@@ -1,0 +1,13 @@
+encrypt:
+  #key: 12345 对称加密
+  keyStore:
+    location: classpath:/server.jks
+    password: password
+    alias: alias
+    secret: secret
+spring:
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false

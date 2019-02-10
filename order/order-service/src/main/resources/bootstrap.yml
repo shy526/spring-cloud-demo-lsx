@@ -1,0 +1,20 @@
+encrypt:
+  key-store:
+    location: classpath:/server.jks
+    password: password
+    alias: alias
+    secret: secret
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: order
+  cloud:
+    config:
+      profile: dev
+      name: order,dataSource,rabbitmq
+      discovery:
+        service-id: config-01
+        enabled: true

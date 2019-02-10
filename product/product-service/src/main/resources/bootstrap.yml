@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: product
+  cloud:
+    config:
+      name: ${spring.application.name},dataSource,rabbitmq
+      discovery:
+        enabled: true
+        service-id: config-01
+      profile: dev
+    stream:
+      bindings:
+        myMessage:
+          group: product
+          destination: raw-sensor-data
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+encrypt:
+  keyStore:
+    location: classpath:/server.jks
+    password: password
+    alias: alias
+    secret: secret
